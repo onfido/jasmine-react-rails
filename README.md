@@ -1,4 +1,4 @@
-**TLDR;** Command-line unit testing of Rails React Components using Jasmine and Node. Code, installation and usage details here: GITHUB_LINK.
+**TLDR;** Command-line unit testing of Rails React Components using Jasmine and Node. Code, installation and usage details below.
 
 #### About React
 [React](https://facebook.github.io/react/) is a very exciting Javacscript library (released by Facebook) that aims to solve a lot of the unfortunate aspects of client-side MVC frameworks. It champions a one-way data flow (as opposed to the magical two-way bindings used in Angular and Ember) that leads to more predicable rendering, a more declarative coding style, and simpler unit testing. It also requires considerably less bootstrapping than the MVCs, so dropping it in to an existing app is relatively painless.
