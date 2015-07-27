@@ -1,0 +1,10 @@
+node_modules
+support/compiled/_components
+support/compiled/components
+support/compiled/spec/*
+!support/compiled/spec/wrapper_spec.js
+!support/compiled/spec/support
+!support/compiled/spec/support/*
+!support/compiled/spec/fixtures/
+support/compiled/spec/fixtures/*
+!support/compiled/spec/fixtures/dependencies.js

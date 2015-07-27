@@ -1,0 +1,25 @@
+{
+  "name": "jasmine-test",
+  "version": "1.0.0",
+  "description": "Jasmine-React test runner",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-test"
+  },
+  "author": "Blake Turner",
+  "license": "MIT",
+  "preferGlobal": true,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-execute": "^0.2.2",
+    "grunt-react": "^0.12.2",
+    "grunt-wrap": "^0.3.0",
+    "jasmine": "^2.3.1",
+    "jasmine-react-helpers": "^0.2.2",
+    "jasmine-spec-reporter": "^2.4.0",
+    "jsdom": "^3.1.2",
+    "react": "^0.13.3",
+    "react-test-utils": "0.0.1",
+    "rewire": "^2.3.4"
+  }
+}
