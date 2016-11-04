@@ -271,13 +271,13 @@ Even with browserify I'd have to run my test via Node, so in the end I decided i
 #### Debugging
 
 - The `grunt-react` package is unfortunately a bit secretive about where syntax errors are occuring with they exist. Running `grunt` with the `--verbose` flag helps with this.
-- If you need to take a closer look at how the procompilation works, the files are in `react_spec/support/compiled` directory.
+- If you need to take a closer look at how the precompilation works, the files are in `react_spec/support/compiled` directory.
 - Sometimes the `contextify` package decides to explode, resulting in errors like "Error: Module did not self-register". To fix, run `npm rebuild contextify`.
 
 #### In Conclusion
 
 > "Well, that was harder that I expected it to be" said the developer, 2 days later, looking at the beautiful output of unit-tested React components.
 
-Once I got all of the setup out of the way, unit-testing React became simple and fast. Even with the asset precompilation, setting up the Node tests was much faster that setting up my Rails app to run Rspec. There's a decent amount of everhead when it comes to writing the specs themselves, but - in my experience - that's typical of Javascript testing in general, and well worth the peace of mind that comes from properly unit tested components.
+Once I got all of the setup out of the way, unit-testing React became simple and fast. Even with the asset precompilation, setting up the Node tests was much faster that setting up my Rails app to run Rspec. There's a decent amount of overhead when it comes to writing the specs themselves, but - in my experience - that's typical of Javascript testing in general, and well worth the peace of mind that comes from properly unit tested components.
 
 As always, this is something I wrote to solve my specific problem, so there will be many cases that it *almost* fits. Feel free to submit an issue or pull request on the repo!
