@@ -40,7 +40,7 @@ I had used Node a lot (albeit a few years back), so getting an environment up an
 Here's why.
 
 Consider the following set up in a Jasmine spec file:
-```
+```jsx
 # /spec/path/component_spec.jsx
 var MyComponent = require('path/to/component');
 describe('MyComponent', function(){
@@ -49,7 +49,7 @@ describe('MyComponent', function(){
 ```
 
 Next, consider the way that `react-rails` gets you to define your components:
-```
+```jsx
 # /path/to/component.js.jsx
 var MyComponent = React.createClass({
   render: function() {
@@ -68,7 +68,7 @@ Because we don't define our React-Rails components as modules, invoking `require
 
 After a good night's sleep, I came up with a plan: write a pre-processor that compiles Rails-friendly React components into Jasmine-friendly modules. For example:
 
-```
+```jsx
 # /path/to/rails/component.js.jsx
 var MyComponent = React.createClass({
   render: function() {
@@ -79,7 +79,7 @@ var MyComponent = React.createClass({
 
 Becomes:
 
-```
+```jsx
 # /secret/path/to/compiled/component.js
 var React = require('react/addons');
 
@@ -103,7 +103,7 @@ I used `grunt-react` to compile both the wrapped components and my specs from `j
 
 Next, I needed to tackle dependencies. As I mentioned, `react-rails` adds everything to `window`, so you don't explicitly need to require anything. I went for a declaritive solution that is parsed by Grunt. It's not the prettiest girl in school, but it gets the job done. Note that the paths are relative to your React component within `app/assets/javascripts/components`:
 
-```
+```jsx
 // Dependencies: [../_mixins/form_input_mixin, ../_mixins/date_picker_mixin]
 var DatePicker = React.createClass({
   mixins: [FormInputMixin, DatePickerMixin],
@@ -120,7 +120,7 @@ var DatePicker = React.createClass({
 
 Becomes:
 
-```
+```jsx
 var React = require('react/addons');
 var FormInputMixin = require('../_mixins/form_input_mixin').component;
 var DatePickerMixin = require('../_mixins/date_picker_mixin').component;
@@ -147,7 +147,7 @@ Each spec file is expected to be a `.jsx` file ending with `_spec`, ie. `text_fi
 You need to include the React Helper in each file to set up dependencies.
 
 A simple example:
-```
+```jsx
 // The React Helper sets up the Test DOM and handles dependencies
 // react_helper_path and __component_base are globals set in the test runner,
 // so you don't need to worry about relative paths
@@ -174,7 +174,7 @@ describe('TextField', function(){
 ```
 
 Use `rewire` to stub dependencies:
-```
+```jsx
 // Bootstrap tests
 require(react_helper_path);
 
@@ -211,7 +211,7 @@ describe('MyComponent', function(){
 Simulate an Event:
 
 Note that the easiest way to make this work is to give a CSS class to the DOM element you want to act on.
-```
+```jsx
 require(react_helper_path);
 var TextField = require(__component_base + '/form_inputs/text_field').component;
 
