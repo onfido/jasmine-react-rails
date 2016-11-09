@@ -246,7 +246,7 @@ describe('TextField', function(){
 
 - Visit the GIT REPO and download the source as a zip file.
 - Unzip it and add the directory - `react_spec` - to your app root.
-- Install Node.js and the Node Pacakge Manager (`npm`) if you haven't already.
+- Install Node.js and the Node Package Manager (`npm`) if you haven't already.
 - `cd` into `react_spec` and run `npm install`.
 - Install the Grunt command line tool: `npm install -g grunt-cli`
 - Set your `react-rails` component directory in the Gruntfile under `wrap.advanced.cwd`
